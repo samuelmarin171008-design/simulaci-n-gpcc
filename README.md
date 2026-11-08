@@ -17,6 +17,9 @@ _Nelson Briceño
 ### Escenario de Producción: 
 El programa deja elegir al usuario 3 opciones (produccion estable, alta demanda, produccion critica) y cada una de ellas afecta a 4 variables (materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta). Su modulo se encuentra en config.py en la rama feature/planificacion
 
+### Panel de Estado: 
+Después de cada jornada, decisión importante o incidencia, el programa deberá mostrar un resumen actualizado del estado de la planta. Se debe esperar a que el programa este casi completo para incorporar esta funcion
+
 ## Adrian Torres
 
 ### Planificación de producción: 
@@ -63,7 +66,10 @@ Desperdicio: Cantidad de material perdido durante el proceso
 
 Tiempo Perdido: Cantidad de horas no utilizadas debido a incidencias, mantenimiento u otras situaciones
 
-### Sistema de Costos
+### Sistema de Costos:
+Incorporar un calculo básico del costo acumulado de la jornada donde incluya:
+
+Costo de materia prima, costo de mantenimiento, costo asociado al tiempo perdido, penalización de productos defectuosos
 
 
 
