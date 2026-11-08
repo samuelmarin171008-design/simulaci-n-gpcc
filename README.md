@@ -18,7 +18,7 @@ _Nelson Briceño
 El programa deja elegir al usuario 3 opciones (produccion estable, alta demanda, produccion critica) y cada una de ellas afecta a 4 variables (materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta). Su modulo se encuentra en config.py en la rama feature/planificacion
 
 ### Panel de Estado: 
-Después de cada jornada, decisión importante o incidencia, el programa deberá mostrar un resumen actualizado del estado de la planta. Se debe esperar a que el programa este casi completo para incorporar esta funcion
+Después de cada jornada, decisión importante o incidencia, el programa deberá mostrar un resumen actualizado del estado de la planta. Se debe esperar a que el programa este casi completo para incorporar esta funcion. Crear modulo especifico
 
 ## Adrian Torres
 
@@ -70,6 +70,61 @@ Tiempo Perdido: Cantidad de horas no utilizadas debido a incidencias, mantenimie
 Incorporar un calculo básico del costo acumulado de la jornada donde incluya:
 
 Costo de materia prima, costo de mantenimiento, costo asociado al tiempo perdido, penalización de productos defectuosos
+
+No es necesario utilizar dinero real ni base de datos, el equipo debe decidir las reglas o formulas necesarias para el calculo.
+
+## Nelson Briceño:
+### Evaluacion de cada Jornada: 
+Al finalizar cada jornada se deberan analizar las condiciones actuales y determinar su estado. Por ejemplo:
+
+Produccion: Cumplida
+
+Calidad: Aceptable
+
+Desperdicio: Controlado
+
+Eficiencia: Alta
+
+JORNADA SUPERADA
+
+(Agregar tambien estados negativos)
+
+### Sistema para la siguiente jornada
+Crear un ciclo for o while para avanzar hasta la siguiente jornada hasta cumplir las 5
+
+### Resultado Final de la evaluacion (Recomiendo mirar el ejemplo en el PDF del profe)
+Después de completar las cinco jornadas, el programa deberá presentar un informe final. Como mínimo:
+
+Producción total planificada
+
+Producción total realizada
+
+Producción pendiente
+
+Total de productos defectuosos
+
+Desperdicio acumulado
+
+Horas utilizadas
+
+Horas perdidas
+
+Calidad final
+
+Eficiencia final
+
+Costo acumulado
+
+Resultado general de la planta
+
+El resultado dependerá de todas las decisiones tomadas durante la simulación
+
+### Múltiples Resultados finales
+La simulación deberá tener distintos resultados finales como: Cumplimiento satisfactorio del plan, cumplimiento parcial, incumplimiento del plan, resultado critico por problemas de calidad, resultado critico por falta de recursos. Las condiciones para cada resultado deben de estar definidas y tener su lógica correspondiente
+
+### Reinicio de la simulacion
+Al finalizar la simulación el programa deberá iniciar una nueva sin cerrar la aplicación, dando la opción de Si/No. Esta funcionalidad debe ser añadida mediante ciclos
+
 
 
 
