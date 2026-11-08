@@ -26,16 +26,19 @@ def cargar_variables(op): # Modifica variables dependiendo del escenario
         materia_prima = 1000
         horas_disponibles = 40
         estado_maquinaria = 100
+        capacidad_planta = 200
     elif op == 2:
         materia_prima = 1200
         horas_disponibles = 35
         estado_maquinaria = 100
+        capacidad_planta = 300
     else:
         materia_prima = 600
         horas_disponibles = 30
         estado_maquinaria = 80
+        capacidad_planta = 120
         
-    return materia_prima, horas_disponibles, estado_maquinaria
+    return materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta
 
 nombre_planta, nombre_supervisor = solicitar_datos()
 opcion = elegir_escenario()
