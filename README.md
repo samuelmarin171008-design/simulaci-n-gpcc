@@ -20,7 +20,7 @@ El programa deja elegir al usuario 3 opciones (produccion estable, alta demanda,
 ## Adrian Torres
 
 ### Planificación de producción: 
-Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Su modulo sigue en creación y se puede encontrar en rama feature/planificacion
+Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Su modulo sigue en creación y se puede encontrar en rama feature/planificacion por lo que algunas variables no sean necesarias para este modulo
 
 ### Proceso de produccion (INICIO DE JORNADA):
 Usar reglas matemáticas, lógica y formulas coherentes que permitan que las variables anteriores afecten el resultado. Calcular: producción obtenida, materia prima consumida, desperdicio, horas utilizadas, producción pendiente.
@@ -41,10 +41,30 @@ Opcion A Reparacion Inmediata: Aumento del costo, reduccion del tiempo perdido, 
 
 Opcion B Continuar Produccion: Menor costo inmediato, mayor cantidad de productos defectuosos, reduccion de la calidad
 
-### Sistema de Mantenimiento: 
+### Sistema de Mantenimiento: (FINALIZACION DE LA JORNADA)
 El usuario debe decidir si se realiza o no una accion de mantenimiento. Estas decisiones deben afectar variables de produccion, aunque estas solo tendran efecto en las jornadas siguientes, es decir que si no se hace mantenimiento a la maquina en 3 jornadas, en la 4 fallara y supondra un aumento del coste total. Debe tener al menos:
 
 Estado de la maquina, mantenimiento preventivo, mantenimiento correctivo, tiempo de mantenimiento, costo de mantenimiento
+
+## Angelo Sanchez
+
+### Control de Calidad:
+Establecer reglas para cuando una producción es aceptable o presenta problemas despues de cada jornada, debe incluir: Unidades producidas, unidades defectuosas, porcentaje de defectos, pocentaje de calidad
+
+### Indicadores del Proceso (Las formulas deben estar documentadas en el README):
+Calcular:
+Cumplimiento de produccion: Relacion entre la produccion planificada y la realizada
+
+Calidad: Relacion entre unidades aceptadas y producidas
+
+Eficiencia: Indicador definido por el equipo para comparar el rendimiento obtenido con las condiciones previstas
+
+Desperdicio: Cantidad de material perdido durante el proceso
+
+Tiempo Perdido: Cantidad de horas no utilizadas debido a incidencias, mantenimiento u otras situaciones
+
+### Sistema de Costos
+
 
 
 
