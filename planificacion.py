@@ -25,7 +25,7 @@ def planificacion_verificacion():
         print(" Ajustando recursos.. ")
         materia_prima = materia_prima_disponible
     else:
-        print("s--- PLANIFICACION EXITOSA ---")
+        print("--- PLANIFICACION EXITOSA ---")
         print(f" Unidades a producir: {unidades_producir}")
         print(f" Demanda establecida: {demanda_establecida}")
         print(f" Materia prima restante: {materia_prima_disponible}")
