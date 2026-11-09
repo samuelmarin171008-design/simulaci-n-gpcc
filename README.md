@@ -125,6 +125,18 @@ La simulación deberá tener distintos resultados finales como: Cumplimiento sat
 ### Reinicio de la simulacion
 Al finalizar la simulación el programa deberá iniciar una nueva sin cerrar la aplicación, dando la opción de Si/No. Esta funcionalidad debe ser añadida mediante ciclos
 
+# DIAGRAMA DE FLUJO
+<img width="804" height="455" alt="Captura de pantalla 2026-11-07 143011" src="https://github.com/user-attachments/assets/e5c73879-88fd-4e43-9414-a6af1106dc81" />
+
+<img width="802" height="459" alt="Captura de pantalla 2026-11-07 143032" src="https://github.com/user-attachments/assets/66b06426-8e22-4348-9661-54c05f8f2cab" />
+
+<img width="782" height="448" alt="Captura de pantalla 2026-11-07 143046" src="https://github.com/user-attachments/assets/d362b332-7eb8-4732-9764-05932f152b35" />
+
+<img width="801" height="446" alt="Captura de pantalla 2026-11-07 143057" src="https://github.com/user-attachments/assets/2c14870d-f51a-442a-862b-06160d91b088" />
+
+
+
+
 
 
 
