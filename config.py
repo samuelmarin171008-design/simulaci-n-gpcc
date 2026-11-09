@@ -24,17 +24,17 @@ def elegir_escenario(): # Solicita al usuario a elegir un escenario
 def cargar_variables(op): # Modifica variables dependiendo del escenario
     if op == 1:
         materia_prima = 1000
-        horas_disponibles = 40
+        horas_disponibles = 8
         estado_maquinaria = 100
         capacidad_planta = 200
     elif op == 2:
         materia_prima = 1200
-        horas_disponibles = 35
+        horas_disponibles = 7
         estado_maquinaria = 100
         capacidad_planta = 300
     else:
         materia_prima = 600
-        horas_disponibles = 30
+        horas_disponibles = 6
         estado_maquinaria = 80
         capacidad_planta = 120
         
