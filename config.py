@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Módulo config.py
-
 def solicitar_datos(): 
     print(" Simulador de gestion y produccion gcpp ")
     nombre_planta = str(input(" Ingrese el nombre de la planta: "))
@@ -29,17 +26,17 @@ def cargar_variables(op):
         materia_prima = 1000
         horas_disponibles = 8
         estado_maquinaria = 100
-        capacidad_planta = 600  # <--- Subido para que supere la demanda (425)
+        capacidad_planta = 600  
     elif op == 2:
         materia_prima = 1200
         horas_disponibles = 7
         estado_maquinaria = 100
-        capacidad_planta = 700  # <--- Subido para que supere la demanda (510)
+        capacidad_planta = 700  
     elif op == 3:
         materia_prima = 600
         horas_disponibles = 6
         estado_maquinaria = 80
-        capacidad_planta = 300  # <--- Subido para que supere la demanda (204)
+        capacidad_planta = 300  
         
     return materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta
 
