@@ -1,54 +1,42 @@
-# Variables de la simulacion
+# Variables para la Planificacion de Produccion
 import config
 
-def variables_simulacion(): # Definimos las variables que utilizaremos
+def planificacion_calculo(): 
     opcion = config.elegir_escenario() # Importamos variables del modulo config.py
-    materia_prima, horas_disponibles, estado_maquinaria = config.cargar_variables(opcion)
+    materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta = config.cargar_variables(opcion)
+
+    # Formulas de acuerdo a las variables anteriores
+    unidades_producir = int(materia_prima / 2) * 0.85
+    materia_prima_disponible = 5000 - materia_prima
+    horas_produccion = 40 - horas_disponibles
+    demanda_establecida = (unidades_producir * (estado_maquinaria / 100))
     
-    # Variables de tiempo
-    produccion_planificada = 100
-    produccion_realizada = 0
-    horas_utilizadas = 0
-    horas_perdidas = 0
-    jornadas_restantes = 5
+    return unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta
 
-    # Variables de productos
-    unidades_produccion = (materia_prima / jornadas_restantes) * 0.85
-    productos_defectuosos = 0
-    desperdicio = 0
+def planificacion_verificacion(): # Sistema para verificar si el plan es viable
+    unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta = planificacion_calculo()
 
-    # De aca para abajo esta incompleto (importante)
-    calidad = 0
-    costo_acumulado = 0
-    eficiencia = 0
-    cumplimiento_produccion = 0
+    if demanda_establecida > capacidad_planta:
+        print(" Error: La demanda establecida es mayor que la capacidad de la planta ")
+        respuesta = str(input(" ¿Desea cambiar de plan de produccion? (Si/No) ")).lower()
 
-    # 3. Retornamos
-    return (
-        materia_prima,
-        horas_disponibles,
-        estado_maquinaria,
-        produccion_planificada,
-        produccion_realizada,
-        productos_defectuosos,
-        desperdicio,
-        horas_utilizadas,
-        horas_perdidas,
-        calidad,
-        costo_acumulado,
-        eficiencia,
-        cumplimiento_produccion
-    )
+        if respuesta == "si":
+            return config.elegir_escenario() # Volvera a seleccionar el escenario de produccion
+        elif respuesta == "no":
+            print(" Recortando materia prima a la mitad para esta jornada para no sobrepasar la capacidad de la planta.. ")
+            materia_prima = materia_prima / 2
+            planificacion_calculo() # Hara los calculos nuevamente con la variable actualizada
 
-# Planificacion de produccion
-# Antes de iniciar cada jornada el sistema debe de establecer un plan de produccion
+planificacion_calculo()
+planificacion_verificacion()
+                
 
-# Considerar variables como:
-# Cantidad de unidades a producir
-# Materia prima disponible
-# Horas de produccion
-# Capacidad de la planta
-# Demanda establecida
+
+        
+
+
+
+
 
 # Verificar si es viable
 # Si algo no es viable debera: advertir la situacion, impedir o modificar el plan
