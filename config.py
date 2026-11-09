@@ -32,7 +32,7 @@ def cargar_variables(op): # Modifica variables dependiendo del escenario
         horas_disponibles = 7
         estado_maquinaria = 100
         capacidad_planta = 300
-    else:
+    elif op == 3:
         materia_prima = 600
         horas_disponibles = 6
         estado_maquinaria = 80
