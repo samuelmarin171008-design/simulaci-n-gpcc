@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Módulo config.py
 
 def solicitar_datos(): 
@@ -41,3 +42,5 @@ def cargar_variables(op):
         capacidad_planta = 300  # <--- Subido para que supere la demanda (204)
         
     return materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta
+
+
