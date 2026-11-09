@@ -17,16 +17,16 @@ def planificacion_verificacion(): # Sistema para verificar si el plan es viable
     unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria = planificacion_calculo()
 
     if demanda_establecida > capacidad_planta:
-        print(" Error: La demanda establecida es mayor que la capacidad de la planta ")
-        respuesta = str(input(" ¿Desea cambiar de plan de produccion? (Si/No) ")).lower()
+        print(" ERROR: La demanda establecida es mayor que la capacidad de la planta ")
+        print(" Devolviendo a Seleccion de Plan de Produccion..")
+        return config.elegir_escenario() # Volvera a seleccionar el escenario de produccion
 
-        if respuesta == "si":
-            return config.elegir_escenario() # Volvera a seleccionar el escenario de produccion
+    elif materia_prima_disponible < materia_prima:
+        print(" ERROR: No hay suficiente materia prima disponible para la produccion completa. ")
+        print(" Ajustando recursos.. ")
+        materia_prima = materia_prima_disponible
+        
 
-        elif respuesta == "no":
-            print(" Recortando materia prima a la mitad para esta jornada para no sobrepasar la capacidad de la planta.. ")
-            materia_prima = materia_prima / 2
-            planificacion_calculo() # Hara los calculos nuevamente con la variable actualizada
 
 
 
