@@ -11,11 +11,10 @@ def planificacion_calculo():
     horas_produccion = 40 - horas_disponibles
     demanda_establecida = int((unidades_producir * (estado_maquinaria / 100)))
     
-    return unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria
+    return unidades_producir, materia_prima_disponible, horas_produccion, horas_disponibles, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria
 
 def planificacion_verificacion(): # Sistema para verificar si el plan es viable
-    unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria = planificacion_calculo()
-
+    unidades_producir, materia_prima_disponible, horas_produccion, horas_disponibles, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria = planificacion_calculo()
     if demanda_establecida > capacidad_planta:
         print(" ERROR: La demanda establecida es mayor que la capacidad de la planta ")
         print(" Devolviendo a Seleccion de Plan de Produccion..")
@@ -24,19 +23,15 @@ def planificacion_verificacion(): # Sistema para verificar si el plan es viable
     elif materia_prima_disponible < materia_prima:
         print(" ERROR: No hay suficiente materia prima disponible para la produccion completa. ")
         print(" Ajustando recursos.. ")
-        materia_prima = materia_prima_disponible
-        
+        materia_prima = materia_prima_disponible 
+        return materia_prima
 
+    elif horas_produccion < horas_disponibles:
+        print(" ERROR: No hay suficientes horas de produccion")
+        print(" Seleccione un plan de produccion mas ajustado ")
+        return config.elegir_escenario()
 
+    else:
+        print( " ¡El Plan de Produccion es Viable! ")
 
-
-
-        
-
-
-
-
-
-# Verificar si es viable
-# Si algo no es viable debera: advertir la situacion, impedir o modificar el plan
-# o afectar una variable
+    
