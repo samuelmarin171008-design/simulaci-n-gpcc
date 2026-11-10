@@ -1,7 +1,7 @@
 import config
 
-def planificacion_calculo(): 
-    opcion = config.elegir_escenario() 
+def planificacion_calculo(): # Funcion para el calculo de la viabilidad de plan
+    opcion = config.elegir_escenario()  # importamos variables del modulo config
     materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta = config.cargar_variables(opcion)
 
    
@@ -12,7 +12,7 @@ def planificacion_calculo():
     
     return unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria
 
-def planificacion_verificacion(): 
+def planificacion_verificacion(): # Verificacion de la viabilidad de plan
     unidades_producir, materia_prima_disponible, horas_produccion, demanda_establecida, capacidad_planta, materia_prima, estado_maquinaria = planificacion_calculo()
 
     if demanda_establecida > capacidad_planta:
