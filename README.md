@@ -23,7 +23,7 @@ Después de cada jornada, decisión importante o incidencia, el programa deberá
 ## Adrian Torres
 
 ### Planificación de producción: 
-Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Su modulo sigue en creación y se puede encontrar en rama feature/planificacion por lo que algunas variables no sean necesarias para este modulo
+Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Su modulo se encuentra incorporado ya en la rama main
 
 ### Proceso de produccion (INICIO DE JORNADA):
 Usar reglas matemáticas, lógica y formulas coherentes que permitan que las variables anteriores afecten el resultado. Calcular: producción obtenida, materia prima consumida, desperdicio, horas utilizadas, producción pendiente.
