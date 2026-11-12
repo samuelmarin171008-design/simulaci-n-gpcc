@@ -1,42 +1,47 @@
+import config
+import planificacion
 
-def calcular_costos_jornada(materia_usada, costo_extra_incidencia):
-    costo_materia = materia_usada * 2
-    costo_total_jornada = costo_materia + costo_extra_incidencia
-    return costo_total_jornada
+def calcular_costos(materia_prima_usada):
+    costo_materia = materia_prima_usada * 2
+    costo_extra = 50
+    costo_total = costo_materia + costo_extra
+    return costo_total
 
-def calcular_indicadores(prod_planificada, prod_real, horas_disp, horas_usadas):
-    if prod_planificada > 0:
-        cumplimiento = (prod_real / prod_planificada) * 100
+def calcular_indicadores(unidades_producir, demanda, horas_disponibles, horas_gastadas):
+    if unidades_producir > 0:
+        cumplimiento = (demanda / unidades_producir) * 100
     else:
         cumplimiento = 0.0
         
-    if horas_disp > 0:
-        eficiencia = (horas_usadas / horas_disp) * 100
+    if horas_disponibles > 0:
+        eficiencia = (horas_gastadas / horas_disponibles) * 100
     else:
         eficiencia = 0.0
         
     return cumplimiento, eficiencia
 
-def mostrar_panel_estado(prod_plan, prod_real, mat_disp, horas_disp, horas_usadas, defectos, calidad, costo, cumplimiento, eficiencia):
-    print(f"Produccion planificada : {prod_plan}")
-    print(f"Produccion realizada   : {prod_real}")
-    print(f"Materia prima restante : {mat_disp}")
-    print(f"Horas usadas / disp.   : {horas_usadas} / {horas_disp}")
-    print(f"Productos defectuosos  : {defectos}")
-    print(f"Calidad del producto   : {calidad:.1f}%")
-    print(f"Cumplimiento           : {cumplimiento:.1f}%")
-    print(f"Eficiencia             : {eficiencia:.1f}%")
-    print(f"Costo acumulado        : ${costo}")   
-
-def mostrar_informe_final(total_plan, total_real, total_defectos, calidad_final, eficiencia_final, costo_final):
-    print(f"Total planificado  : {total_plan}")
-    print(f"Total realizado    : {total_real}")
-    print(f"Calidad final      : {calidad_final:.1f}%")
-    print(f"Eficiencia final   : {eficiencia_final:.1f}%")
-    print(f"Costo acumulado    : ${costo_final}")
+def principal():
+    opcion = config.escenario()
+    materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta = config.variables(opcion)
     
-    if total_real >= (total_plan * 0.9):
+    unidades_producir, mat_disponible, h_gastadas, demanda_est = planificacion.planificacion_verificacion()
+    
+    materia_usada = materia_prima - mat_disponible
+    costo_total = calcular_costos(materia_usada)
+    cumplimiento, eficiencia = calcular_indicadores(unidades_producir, demanda_est, horas_disponibles, h_gastadas)
+    
+    print("PANEL DE ESTADO Y REPORTES")
+    print("Unidades a producir      :", unidades_producir)
+    print("Materia prima disponible :", mat_disponible)
+    print("Horas gastadas           :", h_gastadas)
+    print("Demanda establecida      :", demanda_est)
+    print("Cumplimiento             :", round(cumplimiento, 1), "%")
+    print("Eficiencia               :", round(eficiencia, 1), "%")
+    print("Costo total de jornada   : $", costo_total)
+    
+    if demanda_est >= (unidades_producir * 0.9):
         print("RESULTADO: PLAN DE PRODUCCION CUMPLIDO")
     else:
         print("RESULTADO: PLAN DE PRODUCCION INCUMPLIDO")
-    
+
+principal()
