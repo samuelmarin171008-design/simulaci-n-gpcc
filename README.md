@@ -15,7 +15,7 @@ _Nelson Briceño
 
 ### Configuración inicial 
 ### Escenario de Producción: 
-El programa deja elegir al usuario 3 opciones (produccion estable, alta demanda, produccion critica) y cada una de ellas afecta a 4 variables (materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta). Su modulo se encuentra en config.py en la rama feature/planificacion
+El programa deja elegir al usuario 3 opciones (produccion estable, alta demanda, produccion critica) y cada una de ellas afecta a 4 variables (materia_prima, horas_disponibles, estado_maquinaria, capacidad_planta). Estado: Completo (config.py) (feature/evaluacion-final)
 
 ### Panel de Estado: 
 Después de cada jornada, decisión importante o incidencia, el programa deberá mostrar un resumen actualizado del estado de la planta. Se debe esperar a que el programa este casi completo para incorporar esta funcion. Crear modulo especifico
@@ -23,10 +23,10 @@ Después de cada jornada, decisión importante o incidencia, el programa deberá
 ## Adrian Torres
 
 ### Planificación de producción: 
-Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Su modulo se encuentra incorporado ya en la rama main
+Antes de entrar en la jornada se consideran varias variables para determinar si el plan propuesto es viable de acuerdo a los recursos disponibles y el escenario elegido, dependiendo del resultado puede advertir la situación, impedir o modificar el plan, afectar alguna variable o iniciar la jornada. Estado: Completo (config.py) (feature/evaluacion-final)
 
 ### Proceso de produccion (INICIO DE JORNADA):
-Usar reglas matemáticas, lógica y formulas coherentes que permitan que las variables anteriores afecten el resultado. Calcular: producción obtenida, materia prima consumida, desperdicio, horas utilizadas, producción pendiente.
+Usar reglas matemáticas, lógica y formulas coherentes que permitan que las variables anteriores afecten el resultado. Calcular: producción obtenida, materia prima consumida, desperdicio, horas utilizadas, producción pendiente. Estado: Casi completo (config.py) (feature/evaluacion-final)
 
 ## Milcelis Del Valle (Crear una rama aparte)
 
@@ -52,7 +52,7 @@ Estado de la maquina, mantenimiento preventivo, mantenimiento correctivo, tiempo
 ## Angelo Sanchez
 
 ### Control de Calidad:
-Establecer reglas para cuando una producción es aceptable o presenta problemas despues de cada jornada, debe incluir: Unidades producidas, unidades defectuosas, porcentaje de defectos, pocentaje de calidad
+Establecer reglas para cuando una producción es aceptable o presenta problemas despues de cada jornada, debe incluir: Unidades producidas, unidades defectuosas, porcentaje de defectos, pocentaje de calidad (control.py)
 
 ### Indicadores del Proceso (Las formulas deben estar documentadas en el README):
 Calcular:
@@ -71,7 +71,7 @@ Incorporar un calculo básico del costo acumulado de la jornada donde incluya:
 
 Costo de materia prima, costo de mantenimiento, costo asociado al tiempo perdido, penalización de productos defectuosos
 
-No es necesario utilizar dinero real ni base de datos, el equipo debe decidir las reglas o formulas necesarias para el calculo.
+No es necesario utilizar dinero real ni base de datos, el equipo debe decidir las reglas o formulas necesarias para el calculo. (control.py)
 
 ## Nelson Briceño:
 ### Evaluacion de cada Jornada: 
