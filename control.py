@@ -1,5 +1,4 @@
 import config
-import planificacion
 
 def calcular_costos(materia_prima):
     costo_materia = materia_prima * 2
@@ -22,8 +21,8 @@ def calcular_indicadores(unidades_producir, demanda, horas_disponibles, horas_ga
 
 def principal():
     opcion = config.escenario()
-    materia_prima, horas_disponibles, estado_maquinaria = planificacion.obtener_datos(opcion)
-    unidades_producir, mat_disponible, h_gastadas, demanda_est = planificacion.procesar_simulacion(materia_prima, horas_disponibles, estado_maquinaria)
+    materia_prima, horas_disponibles, estado_maquinaria = config.cargar_variables(opcion)
+    unidades_producir, mat_disponible, h_gastadas, demanda_est = config.planificacion_calculo(materia_prima, horas_disponibles, estado_maquinaria)
 
     materia_usada = materia_prima - mat_disponible
     costo_total = calcular_costos(materia_usada)
